@@ -35,7 +35,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>180</y>
+      <y>210</y>
       <width>420</width>
       <height>41</height>
      </rect>
@@ -106,7 +106,7 @@ color: rgb(85, 255, 127);</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>220</y>
+      <y>250</y>
       <width>420</width>
       <height>41</height>
      </rect>
@@ -179,7 +179,7 @@ color: rgb(170, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>260</y>
+      <y>290</y>
       <width>420</width>
       <height>41</height>
      </rect>
@@ -250,7 +250,7 @@ background-color: rgb(235, 153, 38);</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>300</y>
+      <y>330</y>
       <width>420</width>
       <height>41</height>
      </rect>
@@ -477,7 +477,7 @@ background-color: rgb(235, 153, 38);</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>140</y>
+      <y>160</y>
       <width>421</width>
       <height>25</height>
      </rect>
@@ -518,7 +518,8 @@ background-color: rgb(235, 153, 38);</string>
      <item>
       <widget class="QPushButton" name="pushButton_reciprocal">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 170, 255);</string>
+        <string notr="true">background-color: rgb(170, 170, 255);
+</string>
        </property>
        <property name="text">
         <string>x^-1</string>
@@ -557,6 +558,46 @@ background-color: rgb(235, 153, 38);</string>
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>140</y>
+      <width>421</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_14">
+     <item>
+      <widget class="QPushButton" name="pushButton_MR">
+       <property name="text">
+        <string>MR</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_MC">
+       <property name="text">
+        <string>MC</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Madd">
+       <property name="text">
+        <string>M +</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Msub">
+       <property name="text">
+        <string>M -</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -564,7 +605,7 @@ background-color: rgb(235, 153, 38);</string>
      <x>0</x>
      <y>0</y>
      <width>606</width>
-     <height>17</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
