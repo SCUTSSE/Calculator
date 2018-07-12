@@ -19,26 +19,26 @@ private slots:
     void equalClicked();
     void lateradderOperatorClicked();
     void latermulOperatorClicked();
-//    void adderOperatorClicked();
-//    void multipliedOperatorClicked();
-//    void subtractionOperatorClicked();
-//   void divisionOperatorClicked();
     void pointClicked();
     void change();
     void DELClicked();
     void clearALL();
-//    void sinOperatorClicked();
-//    void arcsinOperatorClicked();
-//    void cosOperatorClicked();
-//    void arccosOperatorClicked();
-//    void tanOperatorClicked();
-//    void arctanOperatorClicked();
-//    void leftOperatorClicked();
-//    void rightOperatorClicked();
-//    void sqrtClicked();
-//    void squareClicked();
     void unaryfunction();
     void Adsclicked();
+    //    void sinOperatorClicked();
+    //    void arcsinOperatorClicked();
+    //    void cosOperatorClicked();
+    //    void arccosOperatorClicked();
+    //    void tanOperatorClicked();
+    //    void arctanOperatorClicked();
+    //    void leftOperatorClicked();
+    //    void rightOperatorClicked();
+    //    void sqrtClicked();
+    //    void squareClicked();
+    //    void adderOperatorClicked();
+    //    void multipliedOperatorClicked();
+    //    void subtractionOperatorClicked();
+    //   void divisionOperatorClicked();
 
 private:
     Ui::calculator *ui;
@@ -59,3 +59,4 @@ private:
 };
 
 #endif // CALCULATOR_H
+
