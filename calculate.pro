@@ -34,3 +34,7 @@ FORMS += \
         calculator.ui
 
 RC_ICONS = calculator.ico
+
+RESOURCES += \
+    icon.qrc
+
