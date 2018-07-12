@@ -15,9 +15,9 @@ calculator::calculator(QWidget *parent) :
         waitingForOperand = 1;  //1 means true
 
 
-                                                        //connect(ui->pushButton_,SIGNAL(clicked()),this,SLOT());
+        //connect(ui->pushButton_,SIGNAL(clicked()),this,SLOT());
 
-                                                        //numberkey
+        //numberkey
         connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digitClicked()));
         connect(ui->pushButton_1, SIGNAL(clicked()), this, SLOT(digitClicked()));
         connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(digitClicked()));
@@ -65,8 +65,10 @@ calculator::calculator(QWidget *parent) :
 
 
         //
-
-
+        connect(ui->pushButton_MR,SIGNAL(clicked()),this,SLOT(MRclicked()));
+        connect(ui->pushButton_MC,SIGNAL(clicked()),this,SLOT(MCclicked()));
+        connect(ui->pushButton_Madd,SIGNAL(clicked()),this,SLOT(Maddclicked()));
+        connect(ui->pushButton_Msub,SIGNAL(clicked()),this,SLOT(Msubclicked()));
 
         //
         connect(ui->pushButton_Tensquare, SIGNAL(clicked()), this, SLOT(lateradderOperatorClicked()));
@@ -256,18 +258,18 @@ void calculator::MCclicked()
 }
 void calculator::MRclicked()
 {
-    ui->lineEdit_display->setText(QString::number(sumInMemory));
+    ui->lineEdit_output->setText(QString::number(sumInMemory));
     waitingForOperand=true;
 }
 void calculator::Maddclicked()
 {
     equalClicked();
-    sumInMemory+=ui->lineEdit_display->text().toDouble();
+    sumInMemory+=ui->lineEdit_output->text().toDouble();
 }
 void calculator::Msubclicked()
 {
     equalClicked();
-    sumInMemory-=ui->lineEdit_display->text().toDouble();
+    sumInMemory-=ui->lineEdit_output->text().toDouble();
 }
 
 void calculator::pointClicked()
