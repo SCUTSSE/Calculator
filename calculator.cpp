@@ -303,15 +303,9 @@ void calculator::change()
 
 void calculator::Adsclicked()
 {
-        if (waitingForOperand)
-                ui->lineEdit_output->setText("0");
-        else
-        {
-                double value = ui->lineEdit_output->text().toDouble();
-                if (value < 0)
-                        ui->lineEdit_output->setText(ui->lineEdit_output->text().remove(0, 1));
-        }
-
+        double value = ui->lineEdit_output->text().toDouble();
+        if (value < 0)
+                ui->lineEdit_output->setText(ui->lineEdit_output->text().remove(0, 1));
 }
 
 void calculator::DELClicked()
