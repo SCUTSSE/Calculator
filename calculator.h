@@ -29,20 +29,7 @@ public:
         void MRclicked();
         void Maddclicked();
         void Msubclicked();
-        //    void sinOperatorClicked();
-        //    void arcsinOperatorClicked();
-        //    void cosOperatorClicked();
-        //    void arccosOperatorClicked();
-        //    void tanOperatorClicked();
-        //    void arctanOperatorClicked();
-        //    void leftOperatorClicked();
-        //    void rightOperatorClicked();
-        //    void sqrtClicked();
-        //    void squareClicked();
-        //    void adderOperatorClicked();
-        //    void multipliedOperatorClicked();
-        //    void subtractionOperatorClicked();
-        //   void divisionOperatorClicked();
+
 
 private:
         Ui::calculator *ui;
