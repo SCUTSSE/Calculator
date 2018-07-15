@@ -6,7 +6,7 @@ calculator::calculator(QWidget *parent) :
         QMainWindow(parent),
         ui(new Ui::calculator)
 {
-        setFixedSize(600, 400);
+        setFixedSize(600, 450);
         setWindowIcon(QIcon("calculator.ico"));
         ui->setupUi(this);
 
@@ -76,11 +76,7 @@ calculator::calculator(QWidget *parent) :
 
         //
         connect(ui->pushButton_Equal, SIGNAL(clicked()), this, SLOT(equalClicked()));
-        //
-        /*
-        connect(ui->pushButton_Left_parenthes,SIGNAL(clicked()),this,SLOT(leftOperatorClicked()));
-        connect(ui->pushButton_Right_parenthes,SIGNAL(clicked()),this,SLOT(leftOperatorClicked()));
-        */
+
 }
 
 
@@ -94,7 +90,7 @@ void calculator::digitClicked()
         QPushButton *clicked;
         clicked = qobject_cast<QPushButton *>(sender());
 
-        int value = 0;   //int to long
+        int value = 0;
         double Pi;
         //    double a = 0;        //temporary variable ,store decimal
         if (clicked->text() == "Pi")
@@ -303,15 +299,15 @@ void calculator::change()
 
 void calculator::Adsclicked()
 {
-        double value = ui->lineEdit_output->text().toDouble();
-        if (value < 0)
-                ui->lineEdit_output->setText(ui->lineEdit_output->text().remove(0, 1));
+    double value = ui->lineEdit_output->text().toDouble();
+    if (value < 0)
+        ui->lineEdit_output->setText(ui->lineEdit_output->text().remove(0, 1));
 }
 
 void calculator::DELClicked()
 {
-        if (waitingForOperand)
-                return;
+//        if (waitingForOperand)
+//                return;
         QString text = ui->lineEdit_output->text();
         text.chop(1);       //delete the last number
         if (text.isEmpty())
@@ -334,14 +330,7 @@ void calculator::clearALL()
         waitingForOperand = 1;
 }
 
-/*
-void calculator::leftOperatorClicked()
-{
-}
-void calculator::rightOperatorClicked()
-{
-}
-*/
+
 void calculator::unaryfunction()
 {
         QPushButton *clicked = qobject_cast<QPushButton *>(sender());
@@ -490,119 +479,6 @@ void calculator::unaryfunction()
                 ui->lineEdit_output->setText(QString::number(result, 'f', 10));
         }
         waitingForOperand = 1;
-
-        /*
-        switch(operatorname)
-        {
-        case QObject::tr("x^2"):
-        result = pow(a,2.0);
-        break;
-        case QObject::tr("x^.5"):
-        if(a < 0)
-        {
-        abortOperation();
-        return;
-        }
-        else
-        {
-        result = sqrt(a);
-        }
-        break;
-        case QObject::tr("x^-1"):
-        if(a == 0)
-        {
-        abortOperation();
-        return;
-        }
-        result = 1 / a;
-        break;
-        case QObject::tr("x!"):
-        if( (a-(int)a == 0))
-        {
-        if(a==0)
-        {
-        result = 1;
-        }
-        else if(a > 0)
-        {
-        for(int i = a; i >= 1; i++)
-        {
-        result*=i;
-        }
-        }
-        else
-        {
-        abortOperation();
-        return;
-        }
-        }
-        else
-        {
-        abortOperation();
-        return;
-        }
-        break;
-        case QObject::tr("log"):
-        if(a <= 0)
-        {
-        abortOperation();
-        return;
-        }
-        else
-        {
-        result = log10(a);
-        }
-        break;
-        case QObject::tr("ln"):
-        if(a <= 0)
-        {
-        abortOperation();
-        return;
-        }
-        else
-        {
-        result = log(a);
-        }
-        break;
-        case QObject::tr("e^x"):
-        result = exp(a);
-        break;
-        case QObject::tr("sin"):
-        result = sin( a/pi );
-        break;
-        case QObject::tr("cos"):
-        result = cos( a/pi );
-        break;
-        case QObject::tr("tan"):
-        result = tan( a/pi );
-        break;
-        case QObject::tr("cot"):
-        if(tan(a/pi) == 0)
-        {
-        abortOperation();
-        return;
-        }
-        else
-        {
-        result = 1/tan( a/pi );
-        }
-        break;
-        case QObject::tr("arcsin"):
-        result = (180*asin(a))/pi;
-        break;
-        case QObject::tr("arccos"):
-        result = 180*acos(a)/pi;
-        break;
-        case QObject::tr("arctan"):
-        result = 180*atan(a)/pi;
-        break;
-        case QObject::tr("arccot"):
-        result = (180*atan(1/a))/pi;
-        break;
-        default:
-        return;
-        }
-        */
 }
 
 
@@ -645,5 +521,5 @@ double calculator::getPi()
 void calculator::abortOperation()
 {
         clearALL();
-        ui->lineEdit_output->setText(QObject::tr("abort!!!"));
+        ui->lineEdit_output->setText(QObject::tr("Math ERROR"));
 }
